@@ -1,0 +1,3 @@
+export const ADD_WIDGET = "ADD_WIDGET";
+export const DELETE_WIDGET = "DELETE_WIDGET";
+export const FETCH_ALL_WIDGET = "FETCH_ALL_WIDGET";
