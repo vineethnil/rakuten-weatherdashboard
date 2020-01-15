@@ -1,5 +1,5 @@
 
-import {ADD_WIDGET, DELETE_WIDGET, FETCH_ALL_WIDGET} from '../actions/types';
+import {ADD_WIDGET, DELETE_WIDGET} from '../actions/types';
 
 const initState = {
     widget:[
@@ -30,12 +30,6 @@ const widgetReducer =(state=initState,action) =>{
                         });
             const updatedWidget = {...state,widget:filteredWidget}
             return updatedWidget;
-        case FETCH_ALL_WIDGET:
-            console.log(action.payload)
-            const initWidget = [...action.payload,...state.widget];
-            const allWidget = {...state,widget:initWidget}
-            console.log(allWidget);
-            return allWidget;
         default:
             return state;
     }
