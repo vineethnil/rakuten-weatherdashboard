@@ -25,11 +25,6 @@
     font-weight: 600;
     letter-spacing: 0.1em;
 }
-#headerContainer .header_content .title_bar{
-	text-align: center;
-	font-size: 24px;
-	font-weight: bold;
-}
 #headerContainer .header_content .option_bar{
 	text-align: right;
 	font-size: 30;
@@ -41,10 +36,13 @@
 #homeContainer{
 	padding: 16px 24px;
 }
-
+#homeContainer .empty_text{
+	font-size: 2rem;
+	font-family: 'Montserrat', sans-serif;
+}
 /*widget style*/
 #widgetContainer{
-	padding: 2rem;
+	padding: 2rem 0rem;
 	width: 100%;
 }
 #widgetContainer .widget_cnt{
@@ -118,10 +116,91 @@
 	text-align: center;
 }
 #widgetContainer .widget_cnt .highlowCntr .high i, #widgetContainer .widget_cnt .highlowCntr .high span{
-	flex: 1;
-
+	color: #00ff9b;
 }
 #widgetContainer .widget_cnt .highlowCntr .low i, #widgetContainer .widget_cnt .highlowCntr .low span{
-	color: #00ff9b;
 	color: #ff0070;
+}
+
+/*Home style*/
+#settingsContainer{
+	padding: 16px 24px;
+}
+#settingsContainer h3{
+	text-transform: uppercase;
+	padding-left: 24px;
+	font-family: 'Montserrat', sans-serif;
+}
+#settingsContainer h3 a{
+	float: right;
+	font-size: 12px;
+	text-transform:none;
+	margin-top: 6px;
+	font-weight: bolder;
+}
+#settingsContainer .widgetBox{
+	position: relative;
+}
+
+/*Add Widget Style*/
+#addwidgetContainer{
+	padding: 2rem 0rem;
+	width: 100%;
+}
+#addwidgetContainer .widget_cnt{
+	padding: 2rem;
+	width: 100%;
+	background: #ffffff;
+	box-shadow: 0 0 2rem rgba(0,0,255,.1);
+	text-align: center;
+	min-height: 334px;
+}
+#addwidgetContainer .addClickCntr h4{
+	text-transform: uppercase;
+	font-family: 'Montserrat', sans-serif;
+}
+
+#addwidgetContainer .addClickCntr i{
+	font-size: 100px;
+	margin:20px 0px;
+	opacity: 0.8;
+	cursor:pointer;
+}
+#addwidgetContainer .addClickCntr .head{
+	font-size: 12px;
+	font-weight: bold;
+	padding-bottom: 4px; 
+	font-family: 'Montserrat', sans-serif;
+}
+#addwidgetContainer .addClickCntr .selectCntr{
+	margin: 12px 0px;
+	margin-bottom: 16px;
+}
+#addwidgetContainer .addwidgetbox .widBtn{
+	display: inline-block;
+	margin: 0px auto;
+	padding: 0px 12px;
+	text-transform: uppercase;
+    font-size: 1.2rem;
+    letter-spacing: .1rem;
+    margin-bottom: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    color: #2370AF;
+}
+
+/*delete widget*/
+#delete_widget{
+	position: absolute;
+	right: 30px;
+	top: 30px;
+}
+#delete_widget i{
+	font-size: 20px;
+	cursor: pointer;
+	transition: all 0.2s;
+}
+#delete_widget i:hover{
+	transform: scale(1.5);
 }

@@ -4,17 +4,17 @@ import {ADD_WIDGET, DELETE_WIDGET, FETCH_ALL_WIDGET} from '../actions/types';
 const initState = {
     widget:[
         {
-            "id": 707860,
-            "name": "Hurzuf",
+            "id": 2643743,
+            "name": "London",
         },
         {
-            "id": 519188,
-            "name": "Novinki",
+            "id": 5128638,
+            "name": "New York",
         },
         {
-            "id": 1283378,
-            "name": "Gorkhā",
-        }
+            "id": 1277333,
+            "name": "Bangalore",
+        },
     ]
 }
 

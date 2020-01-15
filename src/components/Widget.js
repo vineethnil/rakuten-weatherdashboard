@@ -17,19 +17,18 @@ class Widget extends React.Component {
 
 	//Intial Call
 	componentDidMount(){
-		const city = this.props.data.name;
+		const city = this.props.data.id;
 		this.getWeatherDetails(city);
 	}
 
 	//get weather details of the city
 	getWeatherDetails(city){
-		fetch('http://api.openweathermap.org/data/2.5/weather?q='+city+'&units=metric&APPID=f13819a3570693bb579b1457e599279e', {
+		fetch('http://api.openweathermap.org/data/2.5/weather?id='+city+'&units=metric&APPID=f13819a3570693bb579b1457e599279e', {
 	        method: 'GET',
 	    })
 	    .then(respose => respose.json())
 	    .then(parsedJSON => {
 	    	const data = parsedJSON;
-	    	console.log(data);
 	    	this.setState({
 	    		city:data.name,
 				icon:'http://openweathermap.org/img/wn/'+data.weather[0].icon+'@2x.png',

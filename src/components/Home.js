@@ -3,9 +3,7 @@ import './css/main.css';
 import Header from './Header';
 import Widget from './Widget';
 import {connect} from 'react-redux';
-import {addWidget, fetchWidget} from '../actions/WidgetActions';
-
-const widgetValue = [];
+import {Link} from 'react-router-dom';
 
 class Home extends React.Component {
 	constructor (props) {
@@ -13,27 +11,13 @@ class Home extends React.Component {
 		this.state = { 
 			widgets:[],
 		};
-		this.addWidget = this.addWidget.bind(this);
 	}
 
 	//Intial Call
 	componentDidMount(){
-		// this.props.fetchallWidget();
 		this.setState({
 			widgets:this.props.widgetsProps.widget
 		})
-	}
-
-	addWidget(){
-		console.log("here");
-		console.log(this.props.widgetsProps.widget);
-		const newNewWidget = [{
-            "id": 2172797,
-            "name": "London",
-        }];
-		this.props.addNewWidget(newNewWidget);
-		console.log(this.props.widgetsProps.widget);
-
 	}
 
 
@@ -51,10 +35,15 @@ class Home extends React.Component {
 				<div id="homeContainer">
 					<div className="container">
 					  <div className="row">
-					  	{widget_list}
+					  	{this.props.widgetsProps.widget.length>0?
+					  		<>
+					  			{widget_list}
+					  		</>
+					  		:
+					  		<p className="empty_text">No widget to show. Please add widget on <Link to="/settings">settings</Link></p>
+					  	}
 					  </div>
 					</div>
-					<div onClick={this.addWidget}>Click Here</div>
 				</div>
 			</div>
 		);
@@ -68,12 +57,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-
-const mapDispatchtoProps = (dispatch) =>{
-    return {
-        addNewWidget:(postsValue) => dispatch(addWidget(postsValue)),
-        fetchallWidget:() => dispatch(fetchWidget())
-    } 
-}
-
-export default connect(mapStateToProps,mapDispatchtoProps)(Home); 
+export default connect(mapStateToProps,)(Home); 

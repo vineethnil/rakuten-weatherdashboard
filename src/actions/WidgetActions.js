@@ -2,12 +2,12 @@
 import axios from 'axios';
 import {ADD_WIDGET, DELETE_WIDGET, FETCH_ALL_WIDGET} from './types';
 
-const addWidget = (payloadvalue) =>{
-    // console.log(payloadvalue);
-    return {
+const addWidget = (payloadvalue) =>dispatch =>  {
+    dispatch({
         type:ADD_WIDGET,
         payload:payloadvalue
-    }
+    });
+    return Promise.resolve();
 }
 
 const deleteWidget = (payloadvalue) => {
